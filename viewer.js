@@ -2,9 +2,11 @@
 (function() {
   $(document).ready(function() {
     window.loadClickHandlers = function() {
-      readFolderHandler();
-      readFileHandler();
-      return breadcrumbHandler();
+      return window.load(function() {
+        readFolderHandler();
+        readFileHandler();
+        return breadcrumbHandler();
+      });
     };
     window.readFolderHandler = function() {
       return $('li.folder').click(function(e) {

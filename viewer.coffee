@@ -2,9 +2,10 @@ $(document).ready ->
 
 
   window.loadClickHandlers = ->
-    readFolderHandler()
-    readFileHandler()
-    breadcrumbHandler()
+    window.load ->
+      readFolderHandler()
+      readFileHandler()
+      breadcrumbHandler()
 
 
   # Handle clicking on a folder in the sidebar
@@ -28,7 +29,7 @@ $(document).ready ->
     $('.save').click (e) ->
       path = goose.currentPath
       if path
-        val = $('#preview input').val();
+        val = $('#preview input').val()
         goose.writeFile path, val, (file) ->
           renderFile(file)
 
