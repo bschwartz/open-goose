@@ -7,9 +7,11 @@
 }
 
 html, body {
-  font-family: "FrutigerLTW01-46Light", sans-serif;
+  font-family: "FrutigerLTW01-45Light", sans-serif;
   margin: 0;
   padding: 0;
+  color: #363948;
+  -webkit-font-smoothing: antialiased;
 }
 
 #actual_goose {
@@ -109,6 +111,7 @@ html, body {
   position: absolute;
   left: 36px;
   top: 27px;
+  z-index: 2;
   -webkit-transition: all 1s linear;
   -webkit-transform: rotate(0deg), translate(0px,0px);
 }
@@ -125,6 +128,7 @@ img.goose-ring {
   left: 36px;
   top: 27px;
   display: none;
+  z-index: 1;
 }
 
 #header .right_col {
@@ -271,7 +275,7 @@ img.goose-ring {
   vertical-align: top;
   width: 16px;
   zoom: 1;
-  margin: 0 10px;
+  margin: 0 4px 0 15px;
 }
 
 .fullscreen_icon {
