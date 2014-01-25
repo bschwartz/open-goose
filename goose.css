@@ -38,6 +38,8 @@ html, body {
   font-size: 41px;
   font-family:"Frutiger LT W01 65 Bold";
   color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .container .description h2{
@@ -53,6 +55,10 @@ html, body {
   font-family:"FrutigerLTW01-45Light";
   color: white;
   line-height: 29px;
+}
+
+.container .description .tip{
+  color: #3fa9f5;
 }
 
 
@@ -295,7 +301,13 @@ a.delete {
 }
 
 .new_folder_icon {
-  background: transparent url(images/search.png) no-repeat 0 0;
+  background: transparent;
+  height: 17px;
+  width: 17px;
+}
+
+.cancel_icon {
+  background: transparent url(images/cancel.png) no-repeat 0 0;
   height: 17px;
   width: 17px;
 }
