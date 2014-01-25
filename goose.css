@@ -12,6 +12,10 @@ html, body {
   padding: 0;
 }
 
+#actual_goose {
+  display: none;
+}
+
 #splash .hero {
   background: #484a59;
   padding-top: 10px;
@@ -59,6 +63,21 @@ html, body {
 
 .container .description .tip{
   color: #3fa9f5;
+}
+
+.connect {
+  font-size: 14px;
+  font-family:"FrutigerLTW01-45Light";
+  color: white;
+  line-height: 36px;
+  position: absolute;
+  -webkit-font-smoothing: antialiased;
+  background-color: #3fa9f5;
+  padding: 8px 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  left: 63px;
+  bottom: 45px;
 }
 
 
@@ -221,7 +240,6 @@ img.goose-ring {
 #footer .left_actions {
   bottom: 32px;
   position: absolute;
-  left: 37px;
 }
 
 #footer .right_actions {
@@ -253,6 +271,7 @@ img.goose-ring {
   vertical-align: top;
   width: 16px;
   zoom: 1;
+  margin: 0 10px;
 }
 
 .fullscreen_icon {
