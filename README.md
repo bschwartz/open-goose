@@ -1,5 +1,3 @@
-Run a local server in this directory.
+### Edit
 
-    python -m SimpleHTTPServer
-
-
+[Markdown](http://gottagetloose.com)

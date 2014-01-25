@@ -1,7 +1,11 @@
 (function() {
   window.goose = {};
 
-  goose.rootDir = "/Open Goose/"
+  goose.rootDir = "/Open Goose/Demo/"
+
+  goose.relativeDir = function(path) {
+    return path.replace(/^\/Open Goose\/Demo\/?/, "");
+  };
 
   // Given a directory relative from the root, callback with a list of JSON
   // objects representing each file.
@@ -25,7 +29,7 @@
   // Create or update the file. Callback is `fileStat` which represents the
   // state of the updated/new file.
   goose.writeFile = function(path, data, callback) {
-    dbClient.writeFile(goose.rootDir + path, {}, function(apiError, fileStat) {
+    dbClient.writeFile(goose.rootDir + path, data, function(apiError, fileStat) {
       callback(fileStat);
     });
   };
@@ -48,5 +52,14 @@
     dbClient.findByName(goose.rootDir, filename, {}, function(apiError, fileStats) {
       callback(fileStats);
     });
+  };
+
+  goose.currentPath = function() {
+    var queryParams = location.href.split('?')[1];
+    if (queryParams) {
+      return goose.relativeDir(queryParams.match(/path=([^&#]+)/)[1]);
+    } else {
+      return "/";
+    }
   };
 }());
