@@ -22,8 +22,13 @@ html, body {
 }
 
 .container {
-  margin: 0 auto;
-  width: 960px;
+  margin: 0;
+  width: 378px;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: #363948;
 }
 
 #splash .wistia_embed {

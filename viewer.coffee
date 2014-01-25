@@ -1,11 +1,10 @@
 $(document).ready ->
 
 
-  window.loadClickHandlers = ->
-    window.load ->
-      readFolderHandler()
-      readFileHandler()
-      breadcrumbHandler()
+  window.loadGooseClickHandlers = ->
+    readFolderHandler()
+    readFileHandler()
+    breadcrumbHandler()
 
 
   # Handle clicking on a folder in the sidebar
@@ -40,7 +39,7 @@ $(document).ready ->
       e.preventDefault()
       path = prompt('What do you want to name this file?')
       goose.writeFile path, '', (file) ->
-        load(location.href)
+        loadGoose(location.href)
 
 
   # Handle clicking on create folder button
@@ -49,16 +48,16 @@ $(document).ready ->
       e.preventDefault()
       path = prompt('What do you want to call this folder?')
       goose.createFolder path, (file) ->
-        load(location.href)
+        loadGoose(location.href)
 
 
   window.breadcrumbHandler = ->
     $('li.crumb').click (e) ->
       path = $(this).attr 'data-path'
       if path is '/'
-        load "#{location.host}/"
+        loadGoose "#{location.host}/"
       else
-        load "#{location.host}/?path=#{encodeURI(path)}"
+        loadGoose "#{location.host}/?path=#{encodeURI(path)}"
 
 
   window.updateState = (path) ->
@@ -94,7 +93,7 @@ $(document).ready ->
 
       renderFile goose.relativeDir(readme) if readme
       updateState goose.relativeDir(readme) if readme
-      loadClickHandlers()
+      loadGooseClickHandlers()
 
 
   # Render the content for a specific file
@@ -105,11 +104,11 @@ $(document).ready ->
       else
         val = $('<div/>').text(content).html()
       $('#content p').html(val)
-      loadClickHandlers()
+      loadGooseClickHandlers()
 
 
   # Initiate Open Goose at a specified folder/file path
-  window.load = (fullpath) ->
+  window.loadGoose = (fullpath) ->
     href = decodeURI(fullpath.substring(0, fullpath.length))
     query_params = href.split('?')[1]
     if query_params
@@ -131,7 +130,7 @@ $(document).ready ->
         updateState pathParts.join '/'
 
 
-  load(location.href)
+  loadGoose(location.href)
   createFolderHandler()
   createFileHandler()
 
