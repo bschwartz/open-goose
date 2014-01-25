@@ -28,7 +28,7 @@ $(document).ready(function(){
     }
   });
 
-  function resizeEditor() {
+  window.resizeEditor = function() {
     $("#text-input").height($(document).height() - $("#header").outerHeight() - 40);
   };
   resizeEditor();

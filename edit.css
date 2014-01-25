@@ -7,7 +7,7 @@ body {
 	top:0;
 	left:0;
 	height:100%;
-	width:50%;
+	width: calc(50% - 76px);
 }
 
 #text-input {
@@ -26,7 +26,7 @@ body {
 
 
 #preview {
-	padding:20px 0 0 450px;
+	padding:20px 0 0 50%;
 	font-family:"FrutigerLTW01-45Light";
 	color:#363948;
 	-webkit-font-smoothing:antialiased;
