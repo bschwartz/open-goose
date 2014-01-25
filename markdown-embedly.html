@@ -1,0 +1,67 @@
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6901872/753164/css/fonts.css" />
+	<style>
+		body {
+			background:pink;
+			margin:0;
+			font-family:Whitney A;
+		}
+		
+		#markdown {
+			position:absolute;
+			top:0;
+			left:0;
+			height:100%;
+			width:400px;
+			
+		}
+		
+		#markdown textarea {
+			width:100%;
+			height:100%;
+			resize:none;
+			border:0;
+			padding:20px;
+			outline:0;
+		}
+		
+		#preview {
+			padding:20px 0 0 450px;
+		}
+		
+		#preview p {
+			margin-top:0;
+		}
+	
+	</style>
+    <script src="/markdown.min.js"></script>
+  </head>
+  <body>
+    <div id="markdown"><textarea id="text-input" oninput="this.editor.update()"
+              rows="6" cols="60">
+Type **Markdown** here.
+# Test
+## test 2
+### test 3
+------------                                                               
+- point 1
+- point 2
+- point 3
+</textarea></div>
+    <div id="preview"> </div>
+    <script>
+      function Editor(input, preview) {
+        this.update = function () {
+          preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
+      }
+      var $ = function (id) { return document.getElementById(id); };
+      new Editor($("text-input"), $("preview"));
+    </script>
+  </body>
+
+</html>
+

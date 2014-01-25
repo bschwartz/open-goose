@@ -1,0 +1,9 @@
+#sidebar {
+  display: inline-block;
+  border: 1px solid black;
+}
+
+#contents {
+  display: inline-block;
+  border: 1px solid pink;
+}
