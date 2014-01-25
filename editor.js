@@ -29,7 +29,10 @@ $(document).ready(function(){
   });
 
   window.resizeEditor = function() {
-    $("#text-input").height($(document).height() - $("#header").outerHeight() - 40);
+    
+    var contentHeight = $("#content").outerHeight();
+    var winHeight = $(window).height() - $("#header").outerHeight();
+    $("#text-input").height(Math.max(contentHeight, winHeight));
   };
   resizeEditor();
   $(window).resize(resizeEditor);
@@ -38,6 +41,7 @@ $(document).ready(function(){
     this.update = function () {
       var html = markdown.toHTML(input.value);
       preview.innerHTML = emojify(html);
+      resizeEditor();
     };
     input.editor = this;
     this.update();

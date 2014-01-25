@@ -23,13 +23,14 @@ html, body {
 
 .container {
   margin: 0;
-  width: 378px;
+  width: 248px;
   height: 100%;
   position: absolute;
   left: 0px;
   top: 0px;
   background-color: #363948;
   -webkit-font-smoothing: antialiased;
+  padding: 50px 65px;
 }
 
 .container .description h1{
@@ -38,10 +39,19 @@ html, body {
   color: white;
 }
 
+.container .description h2{
+  font-size: 22px;
+  font-family:"FrutigerLTW01-45Light";
+  color: white;
+  line-height: 36px;
+}
+
+
 .container .description p{
   font-size: 14px;
   font-family:"FrutigerLTW01-45Light";
   color: white;
+  line-height: 29px;
 }
 
 
