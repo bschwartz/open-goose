@@ -15,7 +15,6 @@ if (dbClient.isAuthenticated()) {
 } else {
   $(document).ready(function(){
     $('#splash a.connect').click(function(){
-      console.log('hi');
       dbClient.authenticate();
       return false;
     });

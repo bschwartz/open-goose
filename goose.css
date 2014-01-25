@@ -7,7 +7,7 @@
 }
 
 html, body {
-  font-family: Sans-Serif;
+  font-family: "FrutigerLTW01-46Light", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -67,7 +67,7 @@ html, body {
 
 .connect {
   font-size: 14px;
-  font-family:"FrutigerLTW01-45Light";
+  font-family:"Frutiger LT W01 65 Bold";
   color: white;
   line-height: 36px;
   position: absolute;

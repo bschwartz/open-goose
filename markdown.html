@@ -1,20 +1,31 @@
 <html>
   <head>
-  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6901872/753164/css/fonts.css" />
+  <link rel="stylesheet" type="text/css" href="/frutiger.css" />
   <link rel="stylesheet" type="text/css" href="/edit.css" />
     <script src="/markdown.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="/jquery.textcomplete.min.js"></script>
+	<script src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js" type="text/javascript"></script>
+	<script src="oauth.js" type="text/javascript"></script>
+	<script src="goose_api.js" type="text/javascript"></script>
 	
 	
   </head>
   <body>
-    <div id="markdown"><textarea id="text-input" oninput="this.editor.update()"
+
+    <div id="markdown">
+	<a href="#" class="save_file">Save</a>
+	
+	<textarea id="text-input" oninput="this.editor.update()"
               rows="6" cols="60">
 Type **Markdown** here.
-# Test
-## test 2
-### test 3
+# Welcome to the Goose
+## A repository of all the Wistia's knowledge
+
+- Why does the Goose exist? Here's [Why.](link)
+- Want to see what's new? Check out [recent.](link)
+
+### Header3 test 
 ------------                                                               
 - point 1
 - point 2
@@ -26,15 +37,17 @@ Type **Markdown** here.
 
 image test
 
-![img](/emoji/goat.png)
+![img](/images/goose-logo-final-final-final-use-this-one.png)
 
 plain text
->block quote
+>block quote lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text 
 >> nested block quote
 
 1. number list
 2. second element
 3. third element
+
+split lists block quote lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text lots of text
 
 + bulleted list
 + using plus signs
@@ -45,6 +58,16 @@ plain text
 </textarea></div>
     <div id="preview"> </div>
     <script>
+	
+	  $(document).ready(function(){
+		$(".save_file").click(function(e){
+			e.preventDefault();
+			goose.writeFile("goosesave", $("#text-input").val(), function(file){
+			console.log("saved ", file);
+			});
+		});
+	  });
+	
       function Editor(input, preview) {
         this.update = function () {
 			var html = markdown.toHTML(input.value);
