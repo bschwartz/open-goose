@@ -180,8 +180,9 @@ img.goose-ring {
   height: 100%;
   position: relative;
   vertical-align: top;
-  width: 270px;
+  width: 255px;
   zoom: 1;
+  padding-left: 15px;
 }
 
 .nav_col ul {
@@ -203,8 +204,14 @@ img.goose-ring {
 
 .nav_col .folder:hover,
 .nav_col .file:hover {
-  background-color: #bdc3c7;
+  background-color: #363948;
 }
+
+.nav_col .folder:hover a,
+.nav_col .file:hover a{
+  color: white;
+}
+
 
 .nav_col a {
   color: #363948;
@@ -244,6 +251,7 @@ img.goose-ring {
 #footer .left_actions {
   bottom: 32px;
   position: absolute;
+  left: 30px;
 }
 
 #footer .right_actions {
@@ -327,6 +335,7 @@ a.delete {
   background: transparent;
   height: 17px;
   width: 17px;
+  display: none;
 }
 
 .cancel_icon {

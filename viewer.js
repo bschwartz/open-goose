@@ -84,13 +84,14 @@
       }
     };
     window.renderFolder = function(folder) {
-      return goose.readDir(folder, function(files) {
+      goose.readDir(folder, function(files) {
         var file, fileNames, path, readme, _i, _len;
         fileNames = [];
         readme = null;
         for (_i = 0, _len = files.length; _i < _len; _i++) {
           file = files[_i];
-          path = file.path.split(goose.rootDir)[1];
+          path = goose.relativeDir(file.path);
+          debugger;
           if (file.isFolder) {
             fileNames.push("<li class=\"folder\"><a data-path=\"" + path + "\">" + file.name + "</a></li>");
           } else {
@@ -106,22 +107,22 @@
           renderFile(goose.relativeDir(readme));
         }
         if (readme) {
-          updateState(goose.relativeDir(readme));
+          return updateState(goose.relativeDir(readme));
         }
-        return loadGooseClickHandlers();
       });
+      return loadGooseClickHandlers();
     };
     window.renderFile = function(file) {
-      return goose.readFile(file, function(content) {
+      goose.readFile(file, function(content) {
         var val;
         if (goose.currentPath().match(/\.md$/)) {
           val = emojify(markdown.toHTML(content));
         } else {
           val = $('<div/>').text(content).html();
         }
-        $('#content p').html(val);
-        return loadGooseClickHandlers();
+        return $('#content p').html(val);
       });
+      return loadGooseClickHandlers();
     };
     window.loadGoose = function(fullpath) {
       var href, path, query_params;

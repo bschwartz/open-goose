@@ -4,7 +4,7 @@
   goose.rootDir = "/Open Goose/Demo/"
 
   goose.relativeDir = function(path) {
-    return path.replace(/^\/Open Goose\/Demo\/?/, "");
+    return path.replace(/^\/Open Goose\/Demo\/?/i, "");
   };
 
   // Given a directory relative from the root, callback with a list of JSON

@@ -80,7 +80,8 @@ $(document).ready ->
       fileNames = []
       readme = null
       for file in files
-        path = file.path.split(goose.rootDir)[1]
+        path = goose.relativeDir(file.path)
+        debugger
         if file.isFolder
           fileNames.push "<li class=\"folder\"><a data-path=\"#{path}\">#{file.name}</a></li>"
         else
@@ -93,7 +94,7 @@ $(document).ready ->
 
       renderFile goose.relativeDir(readme) if readme
       updateState goose.relativeDir(readme) if readme
-      loadGooseClickHandlers()
+    loadGooseClickHandlers()
 
 
   # Render the content for a specific file
@@ -104,7 +105,7 @@ $(document).ready ->
       else
         val = $('<div/>').text(content).html()
       $('#content p').html(val)
-      loadGooseClickHandlers()
+    loadGooseClickHandlers()
 
 
   # Initiate Open Goose at a specified folder/file path
