@@ -8,6 +8,7 @@ $(document).ready(function(){
       $("#content").show();
       $("#text-input").val("");
       $('.save.action').hide();
+      $('.cancel_save').hide();
       $('.edit.action').show();
     });
   });
@@ -25,12 +26,24 @@ $(document).ready(function(){
     if (path) {
       $(this).hide();
       $('.save').show();
+      $('.cancel_save').show();
     }
+  });
+
+  $('.cancel_save.action').click(function(e) {
+    e.preventDefault();
+    $("#markdown").hide();
+    $("#preview").hide();
+    $("#content").show();
+    $("#text-input").val("");
+    $('.save.action').hide();
+    $('.cancel_save').hide();
+    $('.edit.action').show();
   });
 
   window.resizeEditor = function() {
     
-    var contentHeight = $("#content").outerHeight();
+    var contentHeight = $("#preview").outerHeight();
     var winHeight = $(window).height() - $("#header").outerHeight();
     $("#text-input").height(Math.max(contentHeight, winHeight));
   };

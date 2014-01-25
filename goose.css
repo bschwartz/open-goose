@@ -31,6 +31,7 @@ html, body {
   background-color: #363948;
   -webkit-font-smoothing: antialiased;
   padding: 50px 65px;
+  pointer-events: none;
 }
 
 .container .description h1{
