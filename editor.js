@@ -28,6 +28,12 @@ $(document).ready(function(){
     }
   });
 
+  function resizeEditor() {
+    $("#text-input").height($(document).height() - $("#header").outerHeight() - 40);
+  };
+  resizeEditor();
+  $(window).resize(resizeEditor);
+
   function Editor(input, preview) {
     this.update = function () {
       var html = markdown.toHTML(input.value);

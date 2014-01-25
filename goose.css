@@ -31,6 +31,13 @@ html, body {
   background-color: #363948;
 }
 
+.container .description h1{
+  font-size: 41px;
+  font-family:"Frutiger LT W01 65 Bold";
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
 #splash .wistia_embed {
 }
 

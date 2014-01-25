@@ -41,6 +41,7 @@
     });
 
     // cmd + enter opens fullscreen
+    /*
     var isCmd = false;
     $(document).keyup(function (e) {
       if (e.which == 91 || e.which == 93) isCmd=false;
@@ -53,6 +54,7 @@
         }
       }
     });
+    */
 
     // escape closes fullscreen
     $(document).keyup(function(e){
